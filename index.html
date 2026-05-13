@@ -26,6 +26,10 @@
 
     <main>
       <section id="start" class="page active" aria-labelledby="start-title">
+        <div class="home-marker">
+          <b>首頁</b>
+          <span>先決定你首歌要做成咩類型 MV</span>
+        </div>
         <div class="hero">
           <div class="hero-copy">
             <p class="eyebrow">You already have the song</p>
@@ -34,6 +38,11 @@
               呢個教學只專注 CapCut。你會用 CapCut AI Music Video Generator、Auto Lyrics、模板、
               effects 同簡單 beat cuts，做出一條完整 MV。唔需要其他 AI 影片工具，唔需要識拍片。
             </p>
+            <div class="hero-pills" aria-label="第一日目標">
+              <span>今日目標：30 秒 demo</span>
+              <span>先用 16:9</span>
+              <span>只揀一種風格</span>
+            </div>
             <div class="hero-actions">
               <button class="primary" data-next="tools">開始步驟</button>
               <a class="secondary" href="https://www.capcut.com/create/ai-music-video-generator" target="_blank" rel="noreferrer">開 CapCut 官方頁</a>
@@ -83,6 +92,23 @@
           <h2>開 CapCut 前，準備 6 樣嘢</h2>
           <p>準備得好，CapCut 生成出嚟會更似你首歌，而唔係普通模板片。</p>
         </div>
+        <div class="decision-board">
+          <article>
+            <span>01</span>
+            <h2>先決定 MV 類型</h2>
+            <p>第一次建議用 lyric visualizer：畫面簡單、歌詞清楚、最容易完成。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>決定主色</h2>
+            <p>只揀兩種主色，例如粉紅 + 藍、黃 + 黑。顏色一致會令片更似作品。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>決定比例</h2>
+            <p>想放 YouTube 先做 16:9；想放 Reels/TikTok 先做 9:16。唔好同時兩邊遷就。</p>
+          </article>
+        </div>
         <div class="learn-list">
           <article class="panel">
             <h2>1. 歌曲檔案</h2>
@@ -126,11 +152,16 @@
 歌詞：
 [貼上歌詞]</code></pre>
         </div>
+        <div class="mini-checks">
+          <article><b>最少要有</b><span>歌曲 + 歌詞 + 1 個 visual mood</span></article>
+          <article><b>最好有</b><span>封面圖 + 2 條參考 MV + artist name</span></article>
+          <article><b>暫時唔需要</b><span>複雜分鏡、演員、攝影機、專業剪接知識</span></article>
+        </div>
       </section>
 
       <section id="tools" class="page" aria-labelledby="steps-title">
         <div class="section-head tools-head">
-          <p class="eyebrow">Step 1 of 3</p>
+          <p class="eyebrow">操作頁 / CapCut Generator</p>
           <h1 id="steps-title">跟住畫面做：由歌曲生成第一版 MV。</h1>
           <p>呢頁係真正操作頁。逐格跟住做，先做 30 至 60 秒 demo，確認方向之後先做全首歌。</p>
         </div>
@@ -213,11 +244,26 @@
             <div><b>Visualizer</b><span>album cover animation, waveform, lyric typography, subtle motion</span></div>
           </div>
         </div>
+
+        <div class="mistake-strip">
+          <article>
+            <h2>如果生成結果太亂</h2>
+            <p>減少 prompt 形容詞，只保留主角、地方、mood、顏色。例：rainy Hong Kong street, lonely mood, blue pink neon。</p>
+          </article>
+          <article>
+            <h2>如果畫面唔似 MV</h2>
+            <p>選 lyric video 或 visualizer 模板，先用字幕同節奏救回 MV 感，再慢慢換畫面。</p>
+          </article>
+          <article>
+            <h2>如果做唔到全首</h2>
+            <p>先完成副歌 30 秒。副歌成功後，主歌通常只需要較慢、較少效果嘅版本。</p>
+          </article>
+        </div>
       </section>
 
       <section id="edit" class="page" aria-labelledby="edit-title">
         <div class="section-head edit-head">
-          <p class="eyebrow">Step 2 of 3</p>
+          <p class="eyebrow">剪接頁 / Timeline</p>
           <h1 id="edit-title">剪接頁：用 timeline 令片跟住首歌呼吸。</h1>
           <p>呢頁唔講生成，淨係講剪。目標係令觀眾覺得畫面係因為音樂而變，而唔係隨機模板。</p>
         </div>
@@ -278,6 +324,24 @@
           </article>
         </div>
 
+        <div class="pass-board">
+          <article>
+            <span>Pass 1</span>
+            <h2>只排片</h2>
+            <p>唔加特效，先將所有 clips 按歌曲段落排好。呢一輪只問：故事順唔順？</p>
+          </article>
+          <article>
+            <span>Pass 2</span>
+            <h2>修歌詞</h2>
+            <p>逐句聽，修錯字、斷句、入點。字幕準，MV 即刻專業好多。</p>
+          </article>
+          <article>
+            <span>Pass 3</span>
+            <h2>加效果</h2>
+            <p>最後先加 transition、flash、zoom。只加喺副歌、drop、重點歌詞。</p>
+          </article>
+        </div>
+
         <div class="table-wrap" role="region" aria-label="常見問題與修正">
           <table>
             <thead>
@@ -320,7 +384,7 @@
 
       <section id="finish" class="page" aria-labelledby="finish-title">
         <div class="section-head finish-head">
-          <p class="eyebrow">Step 3 of 3</p>
+          <p class="eyebrow">輸出頁 / Publish</p>
           <h1 id="finish-title">輸出頁：交出一條可以公開發佈嘅 MV。</h1>
           <p>呢頁係最後檢查同 export 設定。你要做嘅係避免錯字、壞音量、錯比例呢啲低級錯。</p>
         </div>
@@ -362,6 +426,21 @@
               <li>音量有冇爆、太細、左右聲道問題。</li>
               <li>片尾有冇 artist name / song title。</li>
             </ul>
+          </article>
+        </div>
+
+        <div class="publish-pack">
+          <article>
+            <h2>YouTube description</h2>
+            <p>Song title、artist name、lyrics credit、producer credit、social links。</p>
+          </article>
+          <article>
+            <h2>Short caption</h2>
+            <p>用一句最有情緒嘅歌詞做 caption，再加 release date 或 streaming link。</p>
+          </article>
+          <article>
+            <h2>File naming</h2>
+            <p><code>artist-song-mv-1080p-final.mp4</code>，另外保留 rough cut 同 project 檔。</p>
           </article>
         </div>
 
