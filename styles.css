@@ -36,6 +36,11 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
 .topbar {
   position: sticky;
   top: 0;
@@ -85,7 +90,7 @@ a {
 .back-top,
 .primary,
 .secondary {
-  min-height: 40px;
+  min-height: 44px;
   border: 1px solid var(--ink);
   border-radius: 6px;
   background: #fff;
@@ -145,7 +150,7 @@ p {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.2rem, 6vw, 5.6rem);
+  font-size: 5.2rem;
   line-height: 0.98;
   letter-spacing: 0;
   max-width: 10.5em;
@@ -153,7 +158,7 @@ h1 {
 
 h2 {
   margin: 0 0 10px;
-  font-size: clamp(1.16rem, 2.4vw, 1.55rem);
+  font-size: 1.45rem;
   line-height: 1.2;
   letter-spacing: 0;
 }
@@ -350,7 +355,7 @@ h2 {
 
 .section-head h1 {
   max-width: 12em;
-  font-size: clamp(2rem, 5vw, 4.4rem);
+  font-size: 4.15rem;
 }
 
 .tool-list {
@@ -612,6 +617,14 @@ footer {
   .topbar {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .brand-mark {
+    width: 23px;
+    height: 23px;
+    box-shadow: 3px 3px 0 var(--ink);
   }
 
   .hero,
@@ -631,18 +644,124 @@ footer {
   }
 
   .studio-visual {
-    order: -1;
+    max-width: 560px;
   }
 
   h1 {
-    font-size: clamp(2.1rem, 12vw, 4rem);
+    font-size: 3.2rem;
+  }
+
+  .section-head h1 {
+    font-size: 2.75rem;
+  }
+
+  .page {
+    padding: 30px 0;
+  }
+
+  .workflow-card li,
+  .recipe-grid div {
+    min-height: auto;
   }
 }
 
 @media (max-width: 560px) {
+  body {
+    background:
+      linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px) 0 0 / 28px 28px,
+      var(--paper);
+  }
+
   main,
   footer {
     width: min(100% - 22px, 1160px);
+  }
+
+  .topbar {
+    position: sticky;
+    padding: 9px 11px;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .tabs {
+    width: calc(100% + 22px);
+    margin-inline: -11px;
+    padding: 0 11px 2px;
+    scroll-snap-type: x mandatory;
+    mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 28px), transparent);
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 8px 12px;
+    font-size: 0.94rem;
+  }
+
+  .hero {
+    gap: 22px;
+  }
+
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.03;
+  }
+
+  .section-head h1 {
+    font-size: 2.1rem;
+    line-height: 1.06;
+  }
+
+  h2 {
+    font-size: 1.24rem;
+  }
+
+  .lede,
+  .section-head p,
+  .hero-copy > p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .studio-visual {
+    padding: 10px;
+  }
+
+  .wave {
+    height: 48px;
+    gap: 5px;
+  }
+
+  .wave i {
+    min-width: 6px;
+    height: calc(16px + var(--n, 1) * 5px);
+  }
+
+  .band,
+  .note,
+  .warning,
+  .recipe,
+  .code-panel,
+  .sources,
+  .workflow-examples,
+  .panel,
+  .tool-card,
+  .steps article,
+  .flow-grid article {
+    padding: 14px;
   }
 
   .tool-card {
@@ -653,11 +772,103 @@ footer {
     margin-top: 14px;
   }
 
-  .tabs {
-    width: 100%;
+  .tool-card a,
+  .sources a,
+  .workflow-card a {
+    min-height: 40px;
+    white-space: normal;
   }
 
-  .tab {
-    flex: 0 0 auto;
+  pre {
+    padding: 12px;
+    font-size: 0.82rem;
+  }
+
+  .table-wrap {
+    border: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  tr {
+    margin-bottom: 12px;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  td {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  td::before {
+    color: var(--muted);
+    font-weight: 850;
+  }
+
+  td:nth-child(1)::before {
+    content: "時間";
+  }
+
+  td:nth-child(2)::before {
+    content: "音樂段落";
+  }
+
+  td:nth-child(3)::before {
+    content: "畫面目的";
+  }
+
+  td:nth-child(4)::before {
+    content: "生成方式";
+  }
+
+  footer {
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+
+  .back-top {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: 2.05rem;
+  }
+
+  .section-head h1 {
+    font-size: 1.88rem;
+  }
+
+  td {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }
