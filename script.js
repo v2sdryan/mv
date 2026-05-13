@@ -6,7 +6,6 @@ const nextButtons = Array.from(document.querySelectorAll("[data-next]"));
 const topbar = document.querySelector(".topbar");
 const pageMeta = {
   start: "開始",
-  prepare: "準備",
   tools: "步驟",
   edit: "剪接",
   finish: "輸出",
