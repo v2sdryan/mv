@@ -5,10 +5,10 @@ const tabs = Array.from(document.querySelectorAll(".tab[data-page]"));
 const nextButtons = Array.from(document.querySelectorAll("[data-next]"));
 const topbar = document.querySelector(".topbar");
 const pageMeta = {
-  start: "開始",
-  tools: "步驟",
-  edit: "剪接",
-  finish: "輸出",
+  start: "首頁：決定方向",
+  tools: "操作：生成第一版",
+  edit: "剪接：修 timeline",
+  finish: "輸出：發佈檢查",
 };
 
 function showPage(id) {
@@ -23,8 +23,8 @@ function showPage(id) {
   });
 
   document.body.dataset.currentPage = target;
-  document.body.setAttribute("data-current-label", pageMeta[target] || "開始");
-  topbar?.setAttribute("data-current-label", pageMeta[target] || "開始");
+  document.body.setAttribute("data-current-label", pageMeta[target] || "首頁：決定方向");
+  topbar?.setAttribute("data-current-label", pageMeta[target] || "首頁：決定方向");
 
   history.replaceState(null, "", `#${target}`);
   window.scrollTo({ top: 0, behavior: "smooth" });
