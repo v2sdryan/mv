@@ -1,0 +1,663 @@
+:root {
+  color-scheme: light;
+  --ink: #171717;
+  --muted: #626262;
+  --paper: #fbfaf7;
+  --line: #ded8cf;
+  --rose: #ff5c7a;
+  --teal: #39c6b8;
+  --blue: #4778ff;
+  --yellow: #ffc857;
+  --charcoal: #20242a;
+  --shadow: 0 22px 60px rgba(23, 23, 23, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px) 0 0 / 36px 36px,
+    var(--paper);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+    "PingFang HK", "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px clamp(18px, 4vw, 56px);
+  background: rgba(251, 250, 247, 0.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background:
+    linear-gradient(135deg, var(--rose), var(--yellow) 48%, var(--teal) 49%, var(--blue));
+  border: 2px solid var(--ink);
+  transform: rotate(-8deg);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab,
+.back-top,
+.primary,
+.secondary {
+  min-height: 40px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tab {
+  padding: 8px 13px;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+main {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.page {
+  display: none;
+  padding: clamp(34px, 6vw, 76px) 0;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  gap: clamp(28px, 5vw, 62px);
+  align-items: center;
+  min-height: calc(100svh - 86px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5.6rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+  max-width: 10.5em;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.16rem, 2.4vw, 1.55rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.lede,
+.section-head p,
+.hero-copy > p:not(.eyebrow) {
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+}
+
+.primary {
+  background: var(--rose);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.secondary {
+  background: #fff;
+}
+
+.studio-visual {
+  padding: clamp(14px, 2.4vw, 22px);
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.preview-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 74% 34%, rgba(255, 200, 87, 0.85) 0 9%, transparent 10%),
+    linear-gradient(160deg, #101820 0 42%, #33305f 43% 68%, #ff5c7a 69% 100%);
+}
+
+.sun {
+  position: absolute;
+  right: 14%;
+  top: 16%;
+  width: 18%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 45px rgba(255, 200, 87, 0.65);
+}
+
+.singer {
+  position: absolute;
+  left: 42%;
+  bottom: 9%;
+  width: 12%;
+  height: 42%;
+  border-radius: 45% 45% 10% 10%;
+  background:
+    radial-gradient(circle at 50% 12%, #f7d0b0 0 17%, transparent 18%),
+    linear-gradient(#111 0 34%, #39c6b8 35% 100%);
+  filter: drop-shadow(18px 10px 0 rgba(0, 0, 0, 0.22));
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  mix-blend-mode: screen;
+}
+
+.timeline {
+  display: flex;
+  gap: 7px;
+  margin: 16px 0 14px;
+}
+
+.timeline span {
+  width: var(--w);
+  height: 14px;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  background: var(--c);
+}
+
+.wave {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.wave i {
+  flex: 1;
+  min-width: 10px;
+  height: calc(22px + var(--n, 1) * 8px);
+  background: var(--charcoal);
+  border-radius: 3px;
+}
+
+.wave i:nth-child(2n) {
+  --n: 4;
+  background: var(--teal);
+}
+
+.wave i:nth-child(3n) {
+  --n: 2;
+  background: var(--rose);
+}
+
+.wave i:nth-child(5n) {
+  --n: 5;
+  background: var(--yellow);
+}
+
+.band,
+.note,
+.warning,
+.recipe,
+.code-panel,
+.sources,
+.workflow-examples {
+  margin-top: 28px;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.flow-grid,
+.steps,
+.finish-grid,
+.split {
+  display: grid;
+  gap: 14px;
+}
+
+.flow-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flow-grid article,
+.steps article,
+.panel,
+.tool-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.flow-grid article,
+.steps article,
+.panel {
+  padding: 18px;
+}
+
+.flow-grid p,
+.tool-card p,
+.steps p,
+.panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.section-head {
+  margin-bottom: 24px;
+}
+
+.section-head.compact {
+  margin-bottom: 14px;
+}
+
+.section-head h1 {
+  max-width: 12em;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+}
+
+.tool-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tool-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+}
+
+.tool-card a,
+.sources a,
+.workflow-card a {
+  align-self: flex-start;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: #fff7d5;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-flex;
+  margin-bottom: 10px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 2px 9px;
+  background: #ffe8ee;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.tag.teal {
+  background: #d8f8f3;
+}
+
+.tag.blue {
+  background: #dfe7ff;
+}
+
+.tag.yellow {
+  background: #fff0bd;
+}
+
+.code-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 20px;
+  align-items: start;
+  background: #20242a;
+  color: #fff;
+}
+
+.workflow-examples {
+  background: #fff;
+}
+
+.workflow-card {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.workflow-card h3 {
+  margin: 6px 0 8px;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.workflow-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.workflow-card ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-card li {
+  min-height: 84px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfaf7;
+}
+
+.stars {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: #d8f8f3;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.code-panel p {
+  color: #d6d6d6;
+}
+
+pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: #111318;
+  color: #f6f0df;
+  padding: 16px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+}
+
+.split {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.panel.accent {
+  border-color: var(--ink);
+  background: #fff7d5;
+}
+
+.checklist,
+.ordered {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.checklist li,
+.ordered li {
+  margin: 8px 0;
+}
+
+.table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #20242a;
+  color: #fff;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.steps {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.steps span {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--teal);
+  font-weight: 900;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.recipe-grid div {
+  min-height: 84px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfaf7;
+}
+
+.recipe-grid b,
+.recipe-grid span {
+  display: block;
+}
+
+.recipe-grid span {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.warning {
+  background: #ffe8ee;
+}
+
+.finish-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.sources h2 {
+  width: 100%;
+}
+
+footer {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 44px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--muted);
+}
+
+.back-top {
+  padding: 7px 12px;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero,
+  .flow-grid,
+  .tool-list,
+  .code-panel,
+  .split,
+  .steps,
+  .workflow-card ol,
+  .recipe-grid,
+  .finish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .studio-visual {
+    order: -1;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 12vw, 4rem);
+  }
+}
+
+@media (max-width: 560px) {
+  main,
+  footer {
+    width: min(100% - 22px, 1160px);
+  }
+
+  .tool-card {
+    display: block;
+  }
+
+  .tool-card a {
+    margin-top: 14px;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+  }
+}

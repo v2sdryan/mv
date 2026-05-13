@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>由一首歌整成完整 MV | AI Music Video Workflow</title>
+    <meta
+      name="description"
+      content="香港創作者可用 OpenRouter、ComfyUI、Wan/LTX workflow，由一首兩三分鐘音樂製作完整連貫 MV 的逐頁教學。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#start" aria-label="返回開始">
+        <span class="brand-mark"></span>
+        <span>MV Workflow</span>
+      </a>
+      <nav class="tabs" aria-label="教學頁面">
+        <button class="tab active" data-page="start">開始</button>
+        <button class="tab" data-page="tools">工具</button>
+        <button class="tab" data-page="plan">分鏡</button>
+        <button class="tab" data-page="generate">生成</button>
+        <button class="tab" data-page="finish">完成</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="start" class="page active" aria-labelledby="start-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">2 至 3 分鐘歌曲 -> 完整、有連貫性 MV</p>
+            <h1 id="start-title">用 AI 做 MV，重點唔係「出片」，係先建立一條故事線。</h1>
+            <p class="lede">
+              呢個教學用 5 頁講清楚：先分析首歌，再寫 treatment、分鏡、角色與場景規則，之後用
+              ComfyUI 生成短片段，最後剪成同音樂同步嘅完整 MV。
+            </p>
+            <div class="hero-actions">
+              <button class="primary" data-next="tools">睇工具組合</button>
+              <a class="secondary" href="#quick-map">流程地圖</a>
+            </div>
+          </div>
+          <div class="studio-visual" aria-label="MV 製作流程視覺圖">
+            <div class="preview-frame">
+              <div class="sun"></div>
+              <div class="singer"></div>
+              <div class="scanlines"></div>
+            </div>
+            <div class="timeline">
+              <span style="--w: 18%; --c: #ff5c7a"></span>
+              <span style="--w: 26%; --c: #ffc857"></span>
+              <span style="--w: 16%; --c: #39c6b8"></span>
+              <span style="--w: 30%; --c: #8ab6ff"></span>
+            </div>
+            <div class="wave" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+
+        <div id="quick-map" class="band">
+          <h2>最短可行流程</h2>
+          <div class="flow-grid">
+            <article>
+              <strong>1. 聽歌拆段</strong>
+              <p>Intro / Verse / Chorus / Bridge / Outro，每段一句情緒同畫面。</p>
+            </article>
+            <article>
+              <strong>2. 寫 MV treatment</strong>
+              <p>一句核心故事、主角、場景、顏色、結尾變化。</p>
+            </article>
+            <article>
+              <strong>3. 生成 6 至 8 秒 shots</strong>
+              <p>每段音樂用數個短鏡頭，先求一致，再求華麗。</p>
+            </article>
+            <article>
+              <strong>4. 剪接同同步</strong>
+              <p>用原曲做主軸，影片只係跟節奏、歌詞同情緒服務。</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="note">
+          <strong>香港使用提示：</strong>
+          你用唔到 OpenAI API 都冇問題。文字策劃可以用 OpenRouter；影像生成主要靠本機、租 GPU、
+          RunComfy/ThinkDiffusion 類雲端 ComfyUI，或者其他你 VPN 後可用嘅服務。
+        </aside>
+      </section>
+
+      <section id="tools" class="page" aria-labelledby="tools-title">
+        <div class="section-head">
+          <p class="eyebrow">Page 2</p>
+          <h1 id="tools-title">工具組合：少裝啲，先跑通一條線。</h1>
+          <p>新手最易卡住係工具太多。先用以下「主線工具」，跑到第一條 20 秒 demo，再慢慢加花。</p>
+        </div>
+
+        <div class="tool-list">
+          <article class="tool-card">
+            <div>
+              <span class="tag">核心</span>
+              <h2>ComfyUI</h2>
+              <p>節點式 AI 圖像/影片 workflow。可以載入 GitHub workflow JSON，方便重用同調整。</p>
+            </div>
+            <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="tool-card">
+            <div>
+              <span class="tag teal">影片模型</span>
+              <h2>LTX-Video / ComfyUI-LTXVideo</h2>
+              <p>適合快速測試 text-to-video、image-to-video。官方建議用 ComfyUI workflow。</p>
+            </div>
+            <a href="https://github.com/Lightricks/ComfyUI-LTXVideo" target="_blank" rel="noreferrer">Workflow</a>
+          </article>
+          <article class="tool-card">
+            <div>
+              <span class="tag blue">高質感</span>
+              <h2>Wan2.1 / WanVideoWrapper</h2>
+              <p>適合做風格化、角色一致、first-last frame 過渡。較食 GPU，但畫面潛力高。</p>
+            </div>
+            <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper" target="_blank" rel="noreferrer">Wrapper</a>
+          </article>
+          <article class="tool-card">
+            <div>
+              <span class="tag yellow">同步</span>
+              <h2>Yvann Audio Reactive Nodes</h2>
+              <p>分析鼓、bass、人聲等音訊，令畫面參數跟節奏郁，適合 chorus 或 drop。</p>
+            </div>
+            <a href="https://github.com/yvann-ba/ComfyUI_Yvann-Nodes" target="_blank" rel="noreferrer">Nodes</a>
+          </article>
+          <article class="tool-card">
+            <div>
+              <span class="tag">輸出</span>
+              <h2>VideoHelperSuite</h2>
+              <p>ComfyUI 常用影片輸入/輸出節點，例如載入影片、合成 frame、輸出 MP4。</p>
+            </div>
+            <a href="https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite" target="_blank" rel="noreferrer">VHS</a>
+          </article>
+          <article class="tool-card">
+            <div>
+              <span class="tag teal">文字策劃</span>
+              <h2>OpenRouter</h2>
+              <p>用一條 API key 叫唔同文字模型幫你拆歌詞、寫 prompt、產生 shot list。</p>
+            </div>
+            <a href="https://openrouter.ai/docs/quick-start" target="_blank" rel="noreferrer">Docs</a>
+          </article>
+        </div>
+
+        <div class="code-panel">
+          <div>
+            <h2>OpenRouter 最小設定</h2>
+            <p>如果工具支援 OpenAI-compatible endpoint，通常只要改 base URL 同 API key。</p>
+          </div>
+          <pre><code>OPENAI_API_KEY=你的_OPENROUTER_KEY
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+MODEL=anthropic/claude-sonnet-4.5</code></pre>
+        </div>
+
+        <div class="workflow-examples">
+          <div class="section-head compact">
+            <p class="eyebrow">3 個 Workflow 入口</p>
+            <h2>由易到難，揀一條先完成 30 秒 demo。</h2>
+          </div>
+          <article class="workflow-card">
+            <span class="stars">GitHub 113k+ stars</span>
+            <h3>Workflow A：ComfyUI Template -> 逐 shot 生成 MV</h3>
+            <p>
+              用 <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noreferrer">ComfyUI</a>
+              做主工作台，載入官方 example/template workflow，先做 6 至 8 秒 image-to-video shot。適合新手，
+              因為所有節點、參數、輸出都可以睇到。
+            </p>
+            <ol>
+              <li>用 OpenRouter 寫 12 至 18 個 shots。</li>
+              <li>每個 shot 先生成一張 keyframe。</li>
+              <li>把 keyframe 丟入 ComfyUI I2V workflow。</li>
+              <li>用剪片軟件按歌曲 marker 排好。</li>
+            </ol>
+          </article>
+          <article class="workflow-card">
+            <span class="stars">GitHub 10.2k+ stars</span>
+            <h3>Workflow B：LTX-Video 快速打草稿</h3>
+            <p>
+              用 <a href="https://github.com/Lightricks/LTX-Video" target="_blank" rel="noreferrer">LTX-Video</a>
+              或 <a href="https://github.com/Lightricks/ComfyUI-LTXVideo" target="_blank" rel="noreferrer">ComfyUI-LTXVideo</a>
+              快速做 text-to-video / image-to-video 初稿。適合先確認故事節奏同鏡頭方向。
+            </p>
+            <ol>
+              <li>先輸出低解像度 preview。</li>
+              <li>每段歌詞試 2 至 3 個 motion prompt。</li>
+              <li>保留最順嘅版本，再重做重點鏡頭。</li>
+              <li>Final chorus 可轉去 Wan 做高質版本。</li>
+            </ol>
+          </article>
+          <article class="workflow-card">
+            <span class="stars">GitHub 16k+ stars</span>
+            <h3>Workflow C：Wan2.1 + Audio Reactive 做正式版</h3>
+            <p>
+              用 <a href="https://github.com/Wan-Video/Wan2.1" target="_blank" rel="noreferrer">Wan2.1</a>
+              或 WanVideoWrapper 做 cinematic shots，再加 Yvann Audio Reactive Nodes 令 chorus 跟鼓同 bass 反應。
+              適合做正式 MV 或重點片段。
+            </p>
+            <ol>
+              <li>固定角色、服裝、場景同色彩 prompt。</li>
+              <li>用 first frame / last frame 控制轉場。</li>
+              <li>把鼓、bass、人聲分開控制 1 至 2 個視覺參數。</li>
+              <li>最後用 VideoHelperSuite 輸出 MP4，再入剪片軟件。</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section id="plan" class="page" aria-labelledby="plan-title">
+        <div class="section-head">
+          <p class="eyebrow">Page 3</p>
+          <h1 id="plan-title">先做「MV Bible」，再生成畫面。</h1>
+          <p>一條 MV 連貫，通常唔係因為每個 shot 都靚，而係每個 shot 都遵守同一套規則。</p>
+        </div>
+
+        <div class="split">
+          <article class="panel">
+            <h2>你要先準備</h2>
+            <ul class="checklist">
+              <li>音樂檔：WAV/MP3，最好有歌詞。</li>
+              <li>BPM 同段落時間：例如 0:00 intro，0:18 verse。</li>
+              <li>主角設定：髮型、衣著、年紀、氣質。</li>
+              <li>固定場景：最多 3 個，新手唔好太散。</li>
+              <li>風格參考：電影、MV、攝影語言、色彩。</li>
+            </ul>
+          </article>
+          <article class="panel accent">
+            <h2>OpenRouter Prompt</h2>
+            <p>將歌詞同時間貼入去，叫模型輸出 treatment 同 shot list。</p>
+            <pre><code>你係 MV 導演。根據以下歌曲資訊，
+設計一條 2-3 分鐘連貫 MV。
+
+請輸出：
+1. 一句核心故事
+2. 角色與場景規則
+3. 每 8 秒一個 shot list
+4. 每個 shot 的 ComfyUI prompt
+5. 負面 prompt
+
+歌曲情緒：
+歌詞：
+時間段落：</code></pre>
+          </article>
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="分鏡例子">
+          <table>
+            <thead>
+              <tr>
+                <th>時間</th>
+                <th>音樂段落</th>
+                <th>畫面目的</th>
+                <th>生成方式</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0:00-0:16</td>
+                <td>Intro</td>
+                <td>建立世界觀，主角未出現或只見背影。</td>
+                <td>文字生圖 -> I2V</td>
+              </tr>
+              <tr>
+                <td>0:16-0:48</td>
+                <td>Verse</td>
+                <td>講故事，動作細，鏡頭慢。</td>
+                <td>同一角色 keyframe</td>
+              </tr>
+              <tr>
+                <td>0:48-1:18</td>
+                <td>Chorus</td>
+                <td>情緒爆發，節奏反應明顯。</td>
+                <td>Audio reactive + I2V</td>
+              </tr>
+              <tr>
+                <td>1:18-2:20</td>
+                <td>Bridge/Final</td>
+                <td>視覺轉折，場景或角色狀態改變。</td>
+                <td>First-last frame 過渡</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="generate" class="page" aria-labelledby="generate-title">
+        <div class="section-head">
+          <p class="eyebrow">Page 4</p>
+          <h1 id="generate-title">生成策略：一段歌拆成好多短鏡頭。</h1>
+          <p>唔好一次生成 3 分鐘。用 6 至 8 秒做單位，容易重做、容易對拍、容易保持質素。</p>
+        </div>
+
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h2>先出角色同場景 keyframes</h2>
+            <p>用 SDXL/Flux/Qwen Image 等先出靜態圖。每個角色保留 3 至 5 張最好版本，之後所有 I2V 都用佢哋做 reference。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h2>用 LTX 快速試 shot</h2>
+            <p>先做 480p 或較短片段。重點係鏡頭方向、構圖同動作節奏，唔好一開始追 4K。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h2>用 Wan 做重點鏡頭</h2>
+            <p>Chorus、開場、結尾可以用 Wan I2V/FLF2V 做更穩定嘅轉場同 cinematic motion。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h2>用音訊反應做節奏層</h2>
+            <p>鼓控制閃光或 camera shake，bass 控制 zoom，人聲控制粒子或顏色變化。唔好全部參數一齊郁。</p>
+          </article>
+        </div>
+
+        <div class="recipe">
+          <h2>一個實用生成配方</h2>
+          <div class="recipe-grid">
+            <div><b>Shot 長度</b><span>6-8 秒</span></div>
+            <div><b>FPS</b><span>24 fps</span></div>
+            <div><b>初稿解像度</b><span>480p 或 720p</span></div>
+            <div><b>每段候選</b><span>3 個版本</span></div>
+            <div><b>剪接留白</b><span>每 shot 頭尾多 0.5 秒</span></div>
+            <div><b>命名</b><span>01_intro_a.mp4</span></div>
+          </div>
+        </div>
+
+        <aside class="warning">
+          <strong>版權同安全：</strong>
+          如果首歌唔係你自己擁有，公開發佈前要處理授權。下載 ComfyUI custom nodes 時只用可信 repo，
+          避免亂裝陌生節點。
+        </aside>
+      </section>
+
+      <section id="finish" class="page" aria-labelledby="finish-title">
+        <div class="section-head">
+          <p class="eyebrow">Page 5</p>
+          <h1 id="finish-title">剪接、輸出、部署呢個教學網站。</h1>
+          <p>最後一步係令所有片段服從首歌。你可以用 DaVinci Resolve、CapCut、Premiere 或 Final Cut。</p>
+        </div>
+
+        <div class="finish-grid">
+          <article class="panel">
+            <h2>剪接檢查表</h2>
+            <ul class="checklist">
+              <li>先放原曲，鎖定音軌。</li>
+              <li>在每個 verse/chorus/drop 加 marker。</li>
+              <li>先剪故事，再加效果。</li>
+              <li>同一場景保持同一 LUT 或調色方向。</li>
+              <li>最後先做字幕、片名、credits。</li>
+              <li>輸出 H.264 MP4，另存 project 檔。</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h2>Vercel 部署</h2>
+            <ol class="ordered">
+              <li>建立 GitHub repo，名叫 <code>mv</code>。</li>
+              <li>將呢個 <code>mv</code> 資料夾內容 push 上 repo。</li>
+              <li>去 Vercel -> New Project -> Import GitHub repo。</li>
+              <li>Framework Preset 選 Other / Static。</li>
+              <li>Build Command 留空，Output Directory 留 <code>.</code>。</li>
+              <li>Deploy 後，你會得到公開教學網址。</li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="sources">
+          <h2>參考來源</h2>
+          <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noreferrer">ComfyUI</a>
+          <a href="https://github.com/Lightricks/ComfyUI-LTXVideo" target="_blank" rel="noreferrer">ComfyUI-LTXVideo</a>
+          <a href="https://github.com/Wan-Video/Wan2.1" target="_blank" rel="noreferrer">Wan2.1</a>
+          <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper" target="_blank" rel="noreferrer">WanVideoWrapper</a>
+          <a href="https://github.com/yvann-ba/ComfyUI_Yvann-Nodes" target="_blank" rel="noreferrer">Yvann Nodes</a>
+          <a href="https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite" target="_blank" rel="noreferrer">VideoHelperSuite</a>
+          <a href="https://openrouter.ai/docs/quick-start" target="_blank" rel="noreferrer">OpenRouter Quickstart</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Made for a first MV pipeline</span>
+      <button class="back-top" data-page="start">返回開始</button>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
