@@ -132,6 +132,10 @@ main {
   display: block;
 }
 
+main:has(.page:target) .page.active:not(:target) {
+  display: none;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
@@ -753,7 +757,7 @@ footer {
     padding: 9px 11px;
   }
 
-  .topbar::after {
+  body:not([data-current-page="start"]) .topbar::after {
     display: inline-flex;
     width: 100%;
     min-height: 30px;
