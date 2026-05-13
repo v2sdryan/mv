@@ -883,19 +883,19 @@ footer {
   }
 
   td:nth-child(1)::before {
-    content: "階段";
+    content: "問題";
   }
 
   td:nth-child(2)::before {
-    content: "你做";
+    content: "原因";
   }
 
   td:nth-child(3)::before {
-    content: "Codex 做";
+    content: "CapCut 修法";
   }
 
   td:nth-child(4)::before {
-    content: "工具做";
+    content: "目標";
   }
 
   footer {

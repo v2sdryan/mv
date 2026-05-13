@@ -1,6 +1,6 @@
 # MV Workflow Tutorial
 
-Static Cantonese guide for turning a 2-3 minute song into a coherent AI-assisted music video using Codex, CapCut, cloud ComfyUI, and simple editing tools.
+Static Cantonese guide for turning an existing song into a complete first music video using CapCut only.
 
 ## Run Locally
 
@@ -27,6 +27,6 @@ http://localhost:5173
 
 ## Included Workflow Examples
 
-- CapCut-only lyric MV route for first-time users.
-- Cloud ComfyUI story MV route using image-to-video workflows.
-- Hybrid character-performance route using Codex planning plus ComfyUI/CapCut finishing.
+- Prepare song, lyrics, mood, aspect ratio, and references.
+- Use CapCut AI Music Video Generator / Desktop editor step by step.
+- Add auto lyrics, beat cuts, filters, captions, and export settings.

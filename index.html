@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Codex + 雲端 ComfyUI 做 MV | First Music Video Guide</title>
+    <title>用 CapCut 做第一條 MV | Step-by-step Guide</title>
     <meta
       name="description"
-      content="第一次做 MV 的音樂人教學：只用 Codex、雲端 ComfyUI、CapCut/簡單工具，由一首歌完成三種 MV workflow。"
+      content="已有歌曲的新手音樂人，用 CapCut AI Music Video Generator、Auto Lyrics、模板、對拍剪接，完成第一條 MV。"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -14,14 +14,14 @@
     <header class="topbar">
       <a class="brand" href="#start" aria-label="返回開始">
         <span class="brand-mark"></span>
-        <span>MV Workflow</span>
+        <span>CapCut MV</span>
       </a>
       <nav class="tabs" aria-label="教學頁面">
         <button class="tab active" data-page="start">開始</button>
-        <button class="tab" data-page="tools">3 路線</button>
-        <button class="tab" data-page="learn">學咩</button>
-        <button class="tab" data-page="codex">Codex</button>
-        <button class="tab" data-page="finish">完成</button>
+        <button class="tab" data-page="prepare">準備</button>
+        <button class="tab" data-page="tools">步驟</button>
+        <button class="tab" data-page="edit">剪接</button>
+        <button class="tab" data-page="finish">輸出</button>
       </nav>
     </header>
 
@@ -29,29 +29,28 @@
       <section id="start" class="page active" aria-labelledby="start-title">
         <div class="hero">
           <div class="hero-copy">
-            <p class="eyebrow">For song makers making their first MV</p>
-            <h1 id="start-title">你只識整歌都夠。MV 交畀 Codex 做統籌，CapCut 或雲端 ComfyUI 做畫面。</h1>
+            <p class="eyebrow">You already have the song</p>
+            <h1 id="start-title">第一次做 MV，先用 CapCut。由一首歌變成可發佈音樂影片。</h1>
             <p class="lede">
-              呢個網站教你用一首 2 至 3 分鐘歌，做出完整、有連貫性嘅 MV。你唔需要識拍片，
-              只需要識提供歌曲、歌詞、風格參考，Codex 會幫你拆段、寫分鏡、整理 prompt。
-              最簡單可以先用 CapCut，想要更高控制先用雲端 ComfyUI。
+              呢個教學只專注 CapCut。你會用 CapCut AI Music Video Generator、Auto Lyrics、模板、
+              effects 同簡單 beat cuts，做出一條完整 MV。唔需要其他 AI 影片工具，唔需要識拍片。
             </p>
             <div class="hero-actions">
-              <button class="primary" data-next="tools">揀 MV 做法</button>
-              <button class="secondary" data-next="learn">先睇要學咩</button>
+              <button class="primary" data-next="prepare">開始準備</button>
+              <a class="secondary" href="https://www.capcut.com/create/ai-music-video-generator" target="_blank" rel="noreferrer">開 CapCut 官方頁</a>
             </div>
           </div>
-          <div class="studio-visual" aria-label="Codex 和雲端 ComfyUI 製作流程">
+          <div class="studio-visual" aria-label="CapCut MV 製作流程">
             <div class="preview-frame">
               <div class="sun"></div>
               <div class="singer"></div>
               <div class="scanlines"></div>
             </div>
             <div class="timeline">
-              <span style="--w: 18%; --c: #ff5c7a"></span>
-              <span style="--w: 26%; --c: #ffc857"></span>
-              <span style="--w: 16%; --c: #39c6b8"></span>
-              <span style="--w: 30%; --c: #8ab6ff"></span>
+              <span style="--w: 22%; --c: #ff5c7a"></span>
+              <span style="--w: 18%; --c: #ffc857"></span>
+              <span style="--w: 30%; --c: #39c6b8"></span>
+              <span style="--w: 20%; --c: #8ab6ff"></span>
             </div>
             <div class="wave" aria-hidden="true">
               <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -60,220 +59,217 @@
         </div>
 
         <div class="band">
-          <h2>你今次只需要呢啲工具</h2>
+          <h2>呢條路線適合你如果...</h2>
           <div class="flow-grid">
             <article>
-              <strong>Codex</strong>
-              <p>做導演助理：拆歌、寫故事、shot list、prompt、檔案整理。</p>
+              <strong>你已經有歌</strong>
+              <p>MP3/WAV 都可以，最好亦有歌詞文字檔。</p>
             </article>
             <article>
-              <strong>CapCut</strong>
-              <p>做最簡單 MV：歌詞同步、模板、AI music video、對拍剪接。</p>
+              <strong>你唔識做片</strong>
+              <p>CapCut 會處理字幕、模板、效果、基本輸出。</p>
             </article>
             <article>
-              <strong>雲端 ComfyUI</strong>
-              <p>做高控制畫面：image-to-video、Wan/LTX workflow、輸出短片段。</p>
+              <strong>你想快</strong>
+              <p>第一版目標係 30 至 60 秒 demo，再延長到全曲。</p>
             </article>
             <article>
-              <strong>Google Drive</strong>
-              <p>放歌、歌詞、reference、生成片段，方便 Codex 幫你管理。</p>
+              <strong>你要發佈</strong>
+              <p>最後輸出 1080p MP4，可放 YouTube、IG、TikTok。</p>
             </article>
           </div>
         </div>
-
-        <aside class="note">
-          <strong>建議目標：</strong>
-          第一次唔好直接追 3 分鐘神作。先完成 30 至 45 秒 demo，確認角色、風格、節奏，再伸延成完整 MV。
-        </aside>
       </section>
 
-      <section id="tools" class="page" aria-labelledby="routes-title">
+      <section id="prepare" class="page" aria-labelledby="prepare-title">
         <div class="section-head">
           <p class="eyebrow">Page 2</p>
-          <h1 id="routes-title">3 種做 MV 方法，由易到難。</h1>
-          <p>你可以揀一條主線。第一條可以唔用 ComfyUI，只用 Codex + CapCut；另外兩條先用雲端 ComfyUI。</p>
+          <h1 id="prepare-title">開 CapCut 前，先準備 6 樣嘢。</h1>
+          <p>準備得好，CapCut 生成出嚟會更似你首歌，而唔係普通模板片。</p>
         </div>
 
-        <div class="route-grid">
-          <article class="route-card">
-            <span class="tag teal">最易完成</span>
-            <h2>方法 A：CapCut-only 歌詞 MV</h2>
-            <p>適合第一次做 MV。用 CapCut AI music video、歌詞同步、模板、濾鏡同簡單對拍剪接，唔需要 ComfyUI。</p>
-            <ol>
-              <li>Codex 將歌詞分句，寫每段畫面 mood。</li>
-              <li>CapCut 上載音樂，生成/選擇 matching visuals。</li>
-              <li>用 auto captions / lyrics sync，再加 beat cuts。</li>
-            </ol>
-            <b>完成難度：低。最快出到完整 MV。</b>
+        <div class="learn-list">
+          <article class="panel">
+            <h2>1. 歌曲檔案</h2>
+            <p>用 final mix 或 master。檔名簡單啲，例如 <code>my-song-final.wav</code>。</p>
           </article>
-
-          <article class="route-card">
-            <span class="tag blue">最有故事</span>
-            <h2>方法 B：故事分鏡 MV</h2>
-            <p>適合有歌詞、有情緒轉折嘅歌。每 6 至 8 秒一個 shot，用 image-to-video 做短鏡頭。</p>
-            <ol>
-              <li>Codex 寫 MV Bible：主角、世界觀、顏色、結尾。</li>
-              <li>雲端 ComfyUI 先出 keyframe，再用 I2V 動起來。</li>
-              <li>CapCut/DaVinci 按 verse、chorus、bridge 排片。</li>
-            </ol>
-            <b>完成難度：中。最似真正 MV。</b>
+          <article class="panel">
+            <h2>2. 歌詞</h2>
+            <p>準備純文字歌詞。Auto Lyrics 出錯時，你可以快速改字幕。</p>
           </article>
-
-          <article class="route-card">
-            <span class="tag yellow">最像歌手片</span>
-            <h2>方法 C：角色表演 MV</h2>
-            <p>適合想有「歌手/主角」出鏡。先做固定角色形象，再做 close-up、side profile、舞台鏡頭。</p>
-            <ol>
-              <li>Codex 幫你定角色設定同每段表演情緒。</li>
-              <li>雲端 ComfyUI 用同一張角色圖做多個 I2V 表演 shot。</li>
-              <li>如果雲端 workflow 支援 lip-sync，再加唱歌口型。</li>
-            </ol>
-            <b>完成難度：中高。要花時間挑走怪表情。</b>
+          <article class="panel">
+            <h2>3. 歌曲 mood</h2>
+            <p>用 5 個字描述：例如 dreamy、lonely、neon、rainy、hopeful。</p>
+          </article>
+          <article class="panel">
+            <h2>4. 畫面方向</h2>
+            <p>揀一個：真人感、動畫感、城市夜景、抽象 visualizer、歌詞片。</p>
+          </article>
+          <article class="panel">
+            <h2>5. 發佈比例</h2>
+            <p>YouTube 用 16:9；TikTok/IG Reels 用 9:16。第一次建議先做 16:9。</p>
+          </article>
+          <article class="panel">
+            <h2>6. 參考片</h2>
+            <p>找 2 條你喜歡嘅 MV/visualizer，記低色調、節奏、字幕風格。</p>
           </article>
         </div>
 
         <div class="code-panel">
           <div>
-            <h2>新手推薦次序</h2>
-            <p>先用 A 完成一條，再用 B 做正式 MV。C 留到你熟咗角色一致性先做。</p>
+            <h2>可以叫 Codex 幫你寫 CapCut brief</h2>
+            <p>貼歌詞入 Codex，叫佢幫你變成 CapCut 可用嘅創作方向。</p>
           </div>
-          <pre><code>Week 1: 用 CapCut 做 30 秒 lyric MV
-Week 2: 做 60 秒故事分鏡 demo
-Week 3: 重做最好嘅 shots
-Week 4: 剪完整 MV + 發佈</code></pre>
+          <pre><code>我已有一首歌，想用 CapCut 做 MV。
+請根據以下歌詞輸出：
+1. 影片 mood keywords
+2. 3 個 visual style 方向
+3. 每段歌詞適合的畫面
+4. CapCut AI music video 可輸入的英文 prompt
+5. 字幕風格建議
+
+歌詞：
+[貼上歌詞]</code></pre>
         </div>
       </section>
 
-      <section id="learn" class="page" aria-labelledby="learn-title">
+      <section id="tools" class="page" aria-labelledby="steps-title">
         <div class="section-head">
           <p class="eyebrow">Page 3</p>
-          <h1 id="learn-title">你要學嘅唔多，但要學啱順序。</h1>
-          <p>你係音樂人，唔需要變成技術專家。先學能夠完成 MV 嘅最小知識。</p>
+          <h1 id="steps-title">Step-by-step：用 CapCut 由歌曲生成 MV。</h1>
+          <p>以下用 CapCut 官方 AI Music Video Generator / Desktop editor 思路寫。功能會因地區或版本不同而略有差異。</p>
         </div>
 
-        <div class="learn-list">
-          <article class="panel">
-            <h2>1. MV 基本語言</h2>
-            <p>學識 verse、chorus、bridge 對應畫面情緒；知道 wide / medium / close-up shot 係咩。</p>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h2>開 CapCut AI Music Video Generator</h2>
+            <p>打開官方頁，按 Try AI Music Video Generator。如果網頁版不可用，就下載 CapCut Desktop 再開新 project。</p>
           </article>
-          <article class="panel">
-            <h2>2. 雲端 ComfyUI 基礎</h2>
-            <p>識 load workflow、upload image、改 prompt、queue prompt、下載 MP4。</p>
+          <article>
+            <span>02</span>
+            <h2>Upload 你首歌</h2>
+            <p>上載 MP3/WAV。等 CapCut 分析歌曲節奏、情緒同歌詞同步。若要求 video，也可先放一張封面圖或 reference image。</p>
           </article>
-          <article class="panel">
-            <h2>3. Image-to-Video</h2>
-            <p>先用靜態 keyframe 控制角色同構圖，再叫模型做 camera move、hair movement、light motion。</p>
+          <article>
+            <span>03</span>
+            <h2>選 visual style</h2>
+            <p>選接近歌曲 mood 嘅視覺：cinematic、dreamy、neon city、anime、abstract、performance、lyric video。</p>
           </article>
-          <article class="panel">
-            <h2>4. 對拍剪接</h2>
-            <p>學識將原曲放入 timeline，加 marker，再按鼓、轉段、歌詞尾音剪片。</p>
+          <article>
+            <span>04</span>
+            <h2>加入 prompt</h2>
+            <p>用一句清楚英文描述，不要太長。例如：dreamy neon Hong Kong night, lonely singer, slow cinematic camera, soft rain。</p>
           </article>
-        </div>
-
-        <div class="video-grid">
-          <article class="video-card">
-            <span class="stars">Official</span>
-            <h2>CapCut AI Music Video Generator</h2>
-            <p>先試呢個，因為 CapCut 官方工具可以上載 audio、同步歌詞、選視覺 mood，最接近一鍵 MV 入門。</p>
-            <a href="https://www.capcut.com/create/ai-music-video-generator" target="_blank" rel="noreferrer">Open CapCut</a>
+          <article>
+            <span>05</span>
+            <h2>生成第一版</h2>
+            <p>先生成 30 至 60 秒 demo。唔好一開始追全曲，因為你需要先確認字幕、節奏、畫面方向。</p>
           </article>
-          <article class="video-card">
-            <span class="stars">YouTube</span>
-            <h2>ComfyUI Course - Learn ComfyUI From Scratch</h2>
-            <p>先睇開頭部分，明白 node、workflow、queue、model loader。唔需要一次睇完 5 小時。</p>
-            <a href="https://www.youtube.com/results?search_query=ComfyUI+Course+Learn+ComfyUI+From+Scratch+Full+5+Hour+Course+Ep01+Pixaroma" target="_blank" rel="noreferrer">Search YouTube</a>
+          <article>
+            <span>06</span>
+            <h2>用 Auto Lyrics / Captions</h2>
+            <p>進入 editor，找 Captions 入面嘅 auto lyrics / auto captions。讓 CapCut 自動對齊歌詞，再逐句修正錯字。</p>
           </article>
-          <article class="video-card">
-            <span class="stars">YouTube</span>
-            <h2>Local AI Music Videos in ComfyUI - No Custom Nodes, No Cloud</h2>
-            <p>雖然你會用雲端 ComfyUI，但呢條片有完整 music-video 思路：角色圖、音樂、WAN sound-to-video。</p>
-            <a href="https://www.youtube.com/results?search_query=Local+AI+Music+Videos+in+ComfyUI+No+Custom+Nodes+No+Cloud+Vladimir+Chopine" target="_blank" rel="noreferrer">Search YouTube</a>
+          <article>
+            <span>07</span>
+            <h2>套字幕樣式</h2>
+            <p>每首歌只用 1 至 2 種字幕 style。抒情歌用簡單字體；快歌可用 pop-up、glitch 或 kinetic text。</p>
           </article>
-          <article class="video-card">
-            <span class="stars">YouTube</span>
-            <h2>ComfyUI Wan / LTX Image-to-Video Workflow</h2>
-            <p>重點學：一張圖點變 5 至 8 秒短片，prompt 要寫 motion，而唔係只寫畫面漂亮。</p>
-            <a href="https://www.youtube.com/results?search_query=ComfyUI+Wan+LTX+image+to+video+workflow+beginner" target="_blank" rel="noreferrer">Search YouTube</a>
-          </article>
-          <article class="video-card">
-            <span class="stars">YouTube</span>
-            <h2>CapCut Beat Sync / Music Video Editing</h2>
-            <p>學 marker、beat cut、字幕、transition。就算用 CapCut-only，呢步都係成條 MV 似唔似音樂片嘅關鍵。</p>
-            <a href="https://www.youtube.com/results?search_query=CapCut+beat+sync+music+video+editing+tutorial+beginner" target="_blank" rel="noreferrer">Search YouTube</a>
+          <article>
+            <span>08</span>
+            <h2>Export rough cut</h2>
+            <p>先輸出 rough cut 給自己睇。記低邊段悶、邊句字幕錯、邊個 transition 太花，再返入 editor 改。</p>
           </article>
         </div>
 
-        <aside class="note">
-          <strong>學習原則：</strong>
-          每條片只拎一個技能。唔好邊睇邊裝十個 custom nodes，第一次只求完成一條可播嘅 MV。
-        </aside>
+        <div class="recipe">
+          <h2>CapCut prompt 例子</h2>
+          <div class="recipe-grid">
+            <div><b>抒情歌</b><span>soft cinematic night, lonely city, warm lights, slow camera movement</span></div>
+            <div><b>電子歌</b><span>neon tunnel, abstract rhythm visuals, fast cuts, pulsing lights</span></div>
+            <div><b>R&B</b><span>moody studio performance, close-up singer, blue and red lighting</span></div>
+            <div><b>Indie</b><span>film grain, sunset road trip, handheld camera, nostalgic mood</span></div>
+            <div><b>廣東歌</b><span>Hong Kong rainy street, minibus lights, emotional urban story</span></div>
+            <div><b>Visualizer</b><span>album cover animation, waveform, lyric typography, subtle motion</span></div>
+          </div>
+        </div>
       </section>
 
-      <section id="codex" class="page" aria-labelledby="codex-title">
+      <section id="edit" class="page" aria-labelledby="edit-title">
         <div class="section-head">
           <p class="eyebrow">Page 4</p>
-          <h1 id="codex-title">Codex 可以點樣控制成個 MV 製作。</h1>
-          <p>你每次只需要俾一個清楚任務，Codex 幫你出文件、prompt、表格、剪接 script。</p>
+          <h1 id="edit-title">令佢似 MV：最重要係剪接同字幕。</h1>
+          <p>AI 生成只係素材。真正有 MV 感，要靠你喺 CapCut timeline 做整理。</p>
         </div>
 
-        <div class="split">
-          <article class="panel accent">
-            <h2>第一次同 Codex 講</h2>
-            <pre><code>我有一首歌要做 MV。
-請你做導演助理：
-1. 幫我拆歌曲段落
-2. 設計 3 種 MV 概念
-3. 其中一種必須只用 CapCut
-4. 揀最適合新手的一種
-5. 輸出 30 秒 demo shot list
-6. 分別寫 CapCut 指令和 ComfyUI prompt</code></pre>
+        <div class="route-grid">
+          <article class="route-card">
+            <span class="tag teal">對拍</span>
+            <h2>1. 跟鼓同轉段剪</h2>
+            <p>聽到 chorus、drop、鼓聲強位，就換 shot 或加 zoom。唔需要每拍都剪，太密會亂。</p>
+            <ol>
+              <li>先聽一次歌，記低 0:30 chorus 之類時間。</li>
+              <li>在強位前後剪片。</li>
+              <li>慢歌剪少啲，快歌剪多啲。</li>
+            </ol>
           </article>
-          <article class="panel">
-            <h2>之後叫 Codex 做</h2>
-            <ul class="checklist">
-              <li>整理 `mv_bible.md`：故事、角色、色彩、禁忌。</li>
-              <li>建立 `shot_list.csv`：時間、畫面、prompt、檔名。</li>
-              <li>幫每個 shot 產生 3 個 prompt 版本。</li>
-              <li>檢查生成片段檔名同缺漏。</li>
-              <li>用 FFmpeg 合成 rough cut 或幫你準備剪接清單。</li>
-            </ul>
+          <article class="route-card">
+            <span class="tag blue">字幕</span>
+            <h2>2. 逐句修 Auto Lyrics</h2>
+            <p>CapCut 自動同步好有用，但一定要人手校對。錯字、錯 timing 會令成條片即刻顯得粗糙。</p>
+            <ol>
+              <li>逐句對歌詞。</li>
+              <li>每句字幕不要太長。</li>
+              <li>副歌可加大字或不同顏色。</li>
+            </ol>
+          </article>
+          <article class="route-card">
+            <span class="tag yellow">風格</span>
+            <h2>3. 統一濾鏡同效果</h2>
+            <p>唔好每段都用新特效。揀一個主色調、一套字幕、一兩個 transition，MV 會更似完整作品。</p>
+            <ol>
+              <li>選一個主 filter。</li>
+              <li>transition 最多用 2 種。</li>
+              <li>effects 只放 chorus 或重點句。</li>
+            </ol>
           </article>
         </div>
 
-        <div class="table-wrap" role="region" aria-label="Codex 與雲端 ComfyUI 分工">
+        <div class="table-wrap" role="region" aria-label="常見問題與修正">
           <table>
             <thead>
               <tr>
-                <th>階段</th>
-                <th>你做</th>
-                <th>Codex 做</th>
-                <th>工具做</th>
+                <th>問題</th>
+                <th>原因</th>
+                <th>CapCut 修法</th>
+                <th>目標</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>準備</td>
-                <td>提供歌、歌詞、風格參考</td>
-                <td>拆段、定概念、寫 shot list</td>
-                <td>CapCut 或 ComfyUI 按路線選用</td>
+                <td>畫面太 random</td>
+                <td>style 太多</td>
+                <td>刪走一半素材，只留同一色調</td>
+                <td>一致</td>
               </tr>
               <tr>
-                <td>生成</td>
-                <td>揀最似你想要嘅圖/片</td>
-                <td>改 prompt、命名、追蹤版本</td>
-                <td>CapCut 生成 lyric MV，或 ComfyUI 生成 keyframe 和短影片</td>
+                <td>字幕唔準</td>
+                <td>Auto lyrics 認錯</td>
+                <td>手動改字同 timing</td>
+                <td>可唱跟</td>
               </tr>
               <tr>
-                <td>剪接</td>
-                <td>判斷節奏同情緒</td>
-                <td>準備 rough cut、字幕表、檔案清單</td>
-                <td>CapCut 剪接/字幕，或 ComfyUI 生成補 shot</td>
+                <td>MV 好悶</td>
+                <td>太少變化</td>
+                <td>chorus 加 zoom、flash、快剪</td>
+                <td>有起伏</td>
               </tr>
               <tr>
-                <td>完成</td>
-                <td>確認 final cut</td>
-                <td>輸出 checklist、YouTube description</td>
-                <td>不用</td>
+                <td>太似模板</td>
+                <td>無個人元素</td>
+                <td>加封面、歌名、你嘅 artist name、手寫歌詞</td>
+                <td>似你</td>
               </tr>
             </tbody>
           </table>
@@ -283,61 +279,44 @@ Week 4: 剪完整 MV + 發佈</code></pre>
       <section id="finish" class="page" aria-labelledby="finish-title">
         <div class="section-head">
           <p class="eyebrow">Page 5</p>
-          <h1 id="finish-title">由第一日到發佈：照住呢個節奏做。</h1>
-          <p>第一次做 MV，最怕係無限重做。用固定交付物鎖住進度。</p>
+          <h1 id="finish-title">輸出同發佈前，照呢張 checklist。</h1>
+          <p>完成 MV 唔係按 export 就完。最後 10 分鐘檢查，會救你好多低級錯。</p>
         </div>
 
         <div class="finish-grid">
           <article class="panel">
-            <h2>Day 1：定路線</h2>
+            <h2>Export 建議</h2>
             <ul class="checklist">
-              <li>揀 A / B / C 其中一種。</li>
-              <li>寫 1 句 MV concept。</li>
-              <li>輸出 30 秒 shot list。</li>
+              <li>YouTube：16:9，1080p 或 4K，24/30 fps。</li>
+              <li>TikTok/IG：9:16，1080x1920，30 fps。</li>
+              <li>格式用 MP4 / H.264。</li>
+              <li>先輸出一版自己睇，再出 final。</li>
             </ul>
           </article>
           <article class="panel">
-            <h2>Day 2：做 keyframes</h2>
+            <h2>最後檢查</h2>
             <ul class="checklist">
-              <li>每個場景出 2 至 3 張圖。</li>
-              <li>揀定角色、色調、構圖。</li>
-              <li>唔滿意先改圖，唔好急住轉影片。</li>
-            </ul>
-          </article>
-          <article class="panel">
-            <h2>Day 3：生成短片</h2>
-            <ul class="checklist">
-              <li>每個 shot 生成 3 個版本。</li>
-              <li>保留最好版本，差嘅放 `rejects`。</li>
-              <li>用統一檔名，例如 `03_chorus_a.mp4`。</li>
-            </ul>
-          </article>
-          <article class="panel">
-            <h2>Day 4：剪 rough cut</h2>
-            <ul class="checklist">
-              <li>原曲鎖定在 timeline。</li>
-              <li>先排片，後加效果。</li>
-              <li>缺 shot 就叫 Codex 列補拍清單。</li>
+              <li>歌詞有冇錯字。</li>
+              <li>字幕有冇遮住人面或重要畫面。</li>
+              <li>開頭 5 秒有冇吸引人繼續睇。</li>
+              <li>音量有冇爆、太細、左右聲道問題。</li>
+              <li>片尾有冇 artist name / song title。</li>
             </ul>
           </article>
         </div>
 
         <div class="sources">
-          <h2>參考來源</h2>
-          <a href="https://www.capcut.com/create/ai-music-video-generator" target="_blank" rel="noreferrer">CapCut AI MV</a>
+          <h2>官方參考</h2>
+          <a href="https://www.capcut.com/create/ai-music-video-generator" target="_blank" rel="noreferrer">CapCut AI Music Video Generator</a>
           <a href="https://www.capcut.com/tools/ai-video/" target="_blank" rel="noreferrer">CapCut AI Video</a>
-          <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noreferrer">ComfyUI</a>
-          <a href="https://docs.comfy.org/tutorials/video/ltxv" target="_blank" rel="noreferrer">ComfyUI LTX workflows</a>
-          <a href="https://docs.ltx.video/open-source-model/usage-guides/image-to-video" target="_blank" rel="noreferrer">LTX Image-to-Video</a>
-          <a href="https://www.comfy.org/ko/workflows/image_to_video_wan/" target="_blank" rel="noreferrer">Wan I2V workflow</a>
-          <a href="https://www.classcentral.com/course/youtube-free-local-ai-music-videos-in-comfyui-no-custom-nodes-no-cloud-502360" target="_blank" rel="noreferrer">AI Music Video course</a>
-          <a href="https://artists.youtube.com/resources/premieres-2/" target="_blank" rel="noreferrer">YouTube Artists</a>
+          <a href="https://www.capcut.com/tools/auto-caption-generator" target="_blank" rel="noreferrer">CapCut Auto Captions</a>
+          <a href="https://www.capcut.com/tools/add-subtitles-to-video" target="_blank" rel="noreferrer">Add Subtitles</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>Made for first-time MV makers using Codex + cloud ComfyUI</span>
+      <span>CapCut-only MV guide for first-time music video makers</span>
       <button class="back-top" data-page="start">返回開始</button>
     </footer>
 
