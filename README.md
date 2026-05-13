@@ -1,6 +1,6 @@
 # MV Workflow Tutorial
 
-Static Cantonese guide for turning a 2-3 minute song into a coherent AI-assisted music video.
+Static Cantonese guide for turning a 2-3 minute song into a coherent AI-assisted music video using Codex, CapCut, cloud ComfyUI, and simple editing tools.
 
 ## Run Locally
 
@@ -27,6 +27,6 @@ http://localhost:5173
 
 ## Included Workflow Examples
 
-- ComfyUI workflow route, using a GitHub repo with 113k+ stars.
-- LTX-Video draft route, using a GitHub repo with 10.2k+ stars.
-- Wan2.1 cinematic route, using a GitHub repo with 16k+ stars.
+- CapCut-only lyric MV route for first-time users.
+- Cloud ComfyUI story MV route using image-to-video workflows.
+- Hybrid character-performance route using Codex planning plus ComfyUI/CapCut finishing.

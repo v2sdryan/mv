@@ -314,7 +314,10 @@ h2 {
 .flow-grid,
 .steps,
 .finish-grid,
-.split {
+.split,
+.route-grid,
+.learn-list,
+.video-grid {
   display: grid;
   gap: 14px;
 }
@@ -326,7 +329,9 @@ h2 {
 .flow-grid article,
 .steps article,
 .panel,
-.tool-card {
+.tool-card,
+.route-card,
+.video-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
@@ -334,14 +339,18 @@ h2 {
 
 .flow-grid article,
 .steps article,
-.panel {
+.panel,
+.route-card,
+.video-card {
   padding: 18px;
 }
 
 .flow-grid p,
 .tool-card p,
 .steps p,
-.panel p {
+.panel p,
+.route-card p,
+.video-card p {
   margin: 0;
   color: var(--muted);
 }
@@ -365,6 +374,39 @@ h2 {
   gap: 14px;
 }
 
+.route-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.route-card ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.route-card li {
+  margin: 7px 0;
+}
+
+.route-card b {
+  margin-top: auto;
+}
+
+.learn-list,
+.video-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.video-card {
+  display: grid;
+  gap: 10px;
+}
+
 .tool-card {
   display: flex;
   justify-content: space-between;
@@ -374,7 +416,8 @@ h2 {
 
 .tool-card a,
 .sources a,
-.workflow-card a {
+.workflow-card a,
+.video-card a {
   align-self: flex-start;
   display: inline-flex;
   min-height: 34px;
@@ -634,6 +677,9 @@ footer {
   .code-panel,
   .split,
   .steps,
+  .route-grid,
+  .learn-list,
+  .video-grid,
   .workflow-card ol,
   .recipe-grid,
   .finish-grid {
@@ -759,6 +805,8 @@ footer {
   .sources,
   .workflow-examples,
   .panel,
+  .route-card,
+  .video-card,
   .tool-card,
   .steps article,
   .flow-grid article {
@@ -775,7 +823,8 @@ footer {
 
   .tool-card a,
   .sources a,
-  .workflow-card a {
+  .workflow-card a,
+  .video-card a {
     min-height: 40px;
     white-space: normal;
   }
@@ -834,19 +883,19 @@ footer {
   }
 
   td:nth-child(1)::before {
-    content: "時間";
+    content: "階段";
   }
 
   td:nth-child(2)::before {
-    content: "音樂段落";
+    content: "你做";
   }
 
   td:nth-child(3)::before {
-    content: "畫面目的";
+    content: "Codex 做";
   }
 
   td:nth-child(4)::before {
-    content: "生成方式";
+    content: "工具做";
   }
 
   footer {
