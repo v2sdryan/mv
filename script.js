@@ -1,9 +1,11 @@
 const pages = Array.from(document.querySelectorAll(".page"));
-const tabs = Array.from(document.querySelectorAll("[data-page]"));
+const pageIds = new Set(pages.map((page) => page.id));
+const pageButtons = Array.from(document.querySelectorAll("[data-page]"));
+const tabs = Array.from(document.querySelectorAll(".tab[data-page]"));
 const nextButtons = Array.from(document.querySelectorAll("[data-next]"));
 
 function showPage(id) {
-  const target = document.getElementById(id) ? id : "start";
+  const target = pageIds.has(id) ? id : "start";
 
   pages.forEach((page) => {
     page.classList.toggle("active", page.id === target);
@@ -17,8 +19,8 @@ function showPage(id) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => showPage(tab.dataset.page));
+pageButtons.forEach((button) => {
+  button.addEventListener("click", () => showPage(button.dataset.page));
 });
 
 nextButtons.forEach((button) => {
